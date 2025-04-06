@@ -1,0 +1,10 @@
+[package]
+name = "svdimagecompress"
+version = "0.1.0-dev"
+authors = ["Luis M. B. Varona <lbvarona@mta.ca>"]
+edition = "2024"
+repository = "https://github.com/Luis-Varona/svdimagecompress-rs"
+
+[dependencies]
+faer = "0.21.9"
+image = "0.25.6"
