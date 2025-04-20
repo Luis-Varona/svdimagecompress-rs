@@ -3,6 +3,8 @@ name = "svdimagecompress"
 version = "0.1.0-dev"
 authors = ["Luis M. B. Varona <lbvarona@mta.ca>"]
 edition = "2024"
+description = "TODO"
+license = "MIT OR Apache-2.0"
 repository = "https://github.com/Luis-Varona/svdimagecompress-rs"
 
 [dependencies]
