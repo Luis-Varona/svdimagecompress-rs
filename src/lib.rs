@@ -1,2 +1,4 @@
-pub mod compress;
-pub mod io;
+mod compress;
+mod imagewrapper;
+
+pub use imagewrapper::{GreyImageWrapper, RgbImageWrapper};
