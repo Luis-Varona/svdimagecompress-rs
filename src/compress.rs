@@ -99,13 +99,17 @@ fn svdapprox(mat: MatRef<f32>, rank: usize, bad: bool) -> Result<Mat<f32>, SvdAp
 
 pub trait Compressible {
     type Error;
-    fn compress(&self, rank: usize) -> Result<Self, Self::Error> where Self: Sized;
-    fn compress_bad(&self, rank: usize) -> Result<Self, Self::Error> where Self: Sized;
+    fn compress(&self, rank: usize) -> Result<Self, Self::Error>
+    where
+        Self: Sized;
+    fn compress_bad(&self, rank: usize) -> Result<Self, Self::Error>
+    where
+        Self: Sized;
 }
 
 impl Compressible for GreyImageWrapper {
     type Error = SvdApproxError;
-    
+
     fn compress(&self, rank: usize) -> Result<Self, Self::Error> {
         let mat = svdapprox(self.mat.as_ref(), rank, false)?;
         Ok(GreyImageWrapper {
@@ -127,7 +131,7 @@ impl Compressible for GreyImageWrapper {
 
 impl Compressible for RgbImageWrapper {
     type Error = SvdApproxError;
-    
+
     fn compress(&self, rank: usize) -> Result<Self, Self::Error> {
         let compressed_mats: [Mat<f32>; 3] = self
             .mats
